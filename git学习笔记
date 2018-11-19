@@ -1,0 +1,65 @@
+#初始化
+git config { option } 	//配置git的一系列信息
+option{
+	--global {user.{name,email...}}：设置git服务的用户名和电子邮件
+	--list ：显示git的配置信息
+}
+
+#区域
+工作区《=》物理目录
+暂存区《=》.git/index
+版本库《=》.git
+git rm	 //删除暂存区的软件
+git init //创建git仓库
+git clone //从指定的代码托管库里克隆项目
+git add  //将项目从物理目录添加到暂存区
+git satus	 //查看项目提交的状态
+git diff //显示项目前后的改动
+git commit {options} //将暂存区内的项目提交到版本库
+options{
+	-a:可取代add
+	-m:提交注释
+}
+git rm {options}  //删除暂存区内的文件
+options{
+	-r:强制
+	--chahe:指定暂存区
+}
+git mv 	//将工作区|暂存区的文件重命名
+
+
+#分支
+git branch   {options}  branch_name //显示|创建分支
+options {
+	-d:删除分支
+}
+git checkout  {options} //切换分支
+
+options{
+	-b:创建分支并切换
+}
+	
+git merge	//合并分支
+git  log	{options } //提交日志
+options{
+	--online:简洁的形式
+}
+
+#标签
+git   {options} tag  {options}  commit_id //	为提交到版本库的项目文件打上标签|不加选项为查看标签
+options{
+	show:显示标签的修改信息
+	-a:指定标签名
+	-m:注释
+}
+
+#远程
+git {options} remote { options } 		//显示|建立 连接的远程git源
+{
+	add:添加仓库
+	-v:显示仓库信息
+	remove:移除仓库
+
+}
+git fetch		//同步git源分支
+git clone		//克隆git仓库的项目
