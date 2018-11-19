@@ -1,0 +1,64 @@
+#===================镜像的操作===============
+docker save  {options} //将镜像打包
+options{
+	-o:指定名称
+} 
+docker images  {options}//列出本地的镜像
+docker pull  images_name //下载一个镜像
+docker push images_name 	//上传镜像
+docker search images_name //搜索镜像
+docker tag free_machine_id  tag_name //修改镜像的tag名称
+docker rmi images_name //删除镜像
+docker history images_name //镜像创建的历史
+docker import tar_name images_name //将打包文件生成镜像
+
+#====================容器的操作=================
+docker diff  	//检测容器内的信息更改
+docker cp {v->h;h->v}		//将容器拷贝到主机或者把主机内的文件拷贝到容器
+docker export {options}   //将容器导出为压缩文件
+options{
+	-o:导出的名称
+
+}
+docker wait free_machine_id //阻塞容器的运行
+docker logs {options} 	//获取容器的日志信息
+options{
+	--tail number :指定显示的行数
+	--since:指定时间轴
+}
+docker events { options }     //获取容器的事件信息
+options{
+	 --since:指定时间轴
+	 -f:过滤条件
+}
+docker insept free_machine_id   //获取容器的元信息
+docker exec free_machine_name 		//执行容器的命令
+docker create {options}  images_name //创建一个容器
+options{
+	--name:指定容器的名称
+}
+docker {pause|unpause} free_machine_id          //关闭和暂停容器的进程
+docker rm free_machine_id		//中断容器
+docker kill free_machine_id   	//杀死容器
+docker {start|stop|restart} free_machine_id //对容器进行状态的{开启|关闭|重启}
+docker run 	{options}  images_name //运行一个容器
+options:{
+	-it:分配虚拟交换vty
+	-d:后台
+	-p vport:hport:指定虚拟主机到物理主机的端口映射
+	-P :随机分配端口
+}
+docker commit {options}  free_machine_id modify _images_name //提交一个修改过的容器保存在本地目录的镜像
+options:{
+	-a:作者
+	-m:提交信息
+}
+docker top free_machine_id    //容器的进程信息
+docker ps 		//显示容器运行的进程
+docker port free_machine_id  //显示容器的端口-ip的映射
+
+#=================docker仓库信息======
+docker {info|version}	//包括docker的寄主信息以及docker的api,git的版本等
+
+
+
