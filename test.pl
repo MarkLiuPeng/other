@@ -47,9 +47,10 @@ print "$tb{'name'}";    #哈希key,value
 @test_tow=@test_one; #copy array
 $size=@test_one;     #len array
 print("@test_tow\n $size");
-
 print <<EOF;
 <a href="www.xieke.com"><a/>
 alert("welcome to xieke.com")
 EOF
 =cut
+#特殊字符
+print __FILE__."\n".__PACKAGE__."\n".__LINE__
